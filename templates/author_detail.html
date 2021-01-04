@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Author {% endblock %}
+{% block content %}
+<div class="card bg-dark text-white">
+  <img src="{{ author.image.url }}" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title">{{ author }}</h5>
+    <p class="card-text">{{ author.date_of_birth }} </p>
+      <h4>Произведения:</h4>
+      {% for book in author_books %}
+    <p class="card-text">{{ book.title }}</p>
+      {% endfor %}
+
+  </div>
+</div>
+{% endblock %}
